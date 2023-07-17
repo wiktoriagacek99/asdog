@@ -24,7 +24,7 @@ export const Offer = (props) => {
                   <p className="mb-5 md:mb-24"> {d.text}</p>
                 </div>
                 <div className="w-full md:w-1/2 rounded-xl md:mx-10 h-[400px] ">
-                  <img src={d.image} alt="nie dziala "></img>{" "}
+                  <img src={d.image} alt=""></img>{" "}
                 </div>
               </div>
             ))}

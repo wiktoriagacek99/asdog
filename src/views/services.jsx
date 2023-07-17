@@ -1,13 +1,15 @@
 import React from "react";
 import { Heading } from "../components/heading";
 import { Paragraph } from "../components/paragraph";
-import waveImageTop from "../images/wave-top.svg";
-import waveImageBottom from "../images/wave-bottom.svg";
 
 export const Services = (props) => {
   return (
-    <div id="services" className=" bg-[#f6e4d4] relative object-none">
-      <img src={waveImageTop} alt="" />{" "}
+    <div id="services" className=" bg-[#f6e7c1] relative">
+      <img
+        className="object-revert md:object-contain bg-white"
+        src={props.data.waveImageTop}
+        alt=""
+      />{" "}
       <div className="container px-10 mx-auto flex justify-center items-top h-full py-12 flex-col md:flex-row">
         <div className="text-center">
           <Heading text={props.data.title} />{" "}
@@ -29,7 +31,11 @@ export const Services = (props) => {
           </div>
         </div>
       </div>
-      <img src={waveImageBottom} alt="" />{" "}
+      <img
+        className="object-revert md:object-contain bg-white"
+        src={props.data.waveImageBottom}
+        alt=""
+      />{" "}
     </div>
   );
 };

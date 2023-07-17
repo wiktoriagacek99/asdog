@@ -1,10 +1,12 @@
 {
   "Header": {
     "title": "Lorem ipsum",
-    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "image": "images/main-banner.jpg"
   },
   "About": {
     "title": "About us",
+    "image": "images/about-us.jpg",
     "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "whyUsText": "Why us?",
     "whyUsReasons": ["Lorem ipsum 1", "Lorem ipsum 2", "Lorem ipsum 3"],
@@ -76,7 +78,9 @@
         "title": "Text 6",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
       }
-    ]
+    ],
+    "waveImageTop": "images/wave-top.svg",
+    "waveImageBottom": "images/wave-bottom.svg"
   },
   "Gallery": {
     "title": "Gallery",
@@ -90,6 +94,8 @@
     "address": "123 Test",
     "zipCode": "12-345 Test",
     "facebook": "test-fb.com",
-    "instagram": "test-ig.com"
+    "instagram": "test-ig.com",
+    "waveImageTop": "images/wave-top.svg",
+    "waveImageBottom": "images/wave-bottom.svg"
   }
 }

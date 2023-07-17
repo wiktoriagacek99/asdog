@@ -1,7 +1,6 @@
 import React from "react";
 import { Heading } from "../components/heading";
 import { Paragraph } from "../components/paragraph";
-import aboutImage from "../images/about-us.jpg";
 import "font-awesome/css/font-awesome.min.css";
 
 export const About = (props) => {
@@ -30,7 +29,7 @@ export const About = (props) => {
         </div>
         <div className="w-full md:w-1/2">
           {" "}
-          <img src={aboutImage} alt="About us" />{" "}
+          <img src={props.data.image} alt="About us" />{" "}
         </div>
       </div>
     </div>
