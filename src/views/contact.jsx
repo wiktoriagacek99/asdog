@@ -18,16 +18,16 @@ const handleSubmit = async (event) => {
 
 export const Contact = (props) => {
   return (
-    <div id="contact" className=" bg-[#f6e7c1] relative object-none">
+    <div className=" bg-[#f6e7c1] relative object-none">
       <img
         className="absolute top-0 h-24 w-full object-cover bg-white"
         src={props.data.waveImageTop}
         alt=""
       />{" "}
-      <div className="container px-10 mx-auto flex justify-center items-top h-full py-24">
-        <div className="text-left">
+      <div className="container px-10 mx-auto flex justify-center items-top h-full py-12">
+        <div id="contact" className="text-left py-24">
           <Heading text={props.data.title} />{" "}
-          <Paragraph text={props.data.paragraph} />
+          <Paragraph text={props.data.paragraph} className="w-4/5 mx-auto" />
           <div className="flex justify-center items-top -mx-10  flex-col md:flex-row">
             <form
               method="POST"
@@ -76,7 +76,7 @@ export const Contact = (props) => {
                 </h4>
                 <div className="flex items-center mb-2">
                   {" "}
-                  <i className="fa fa-map-marker !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
+                  <i className="fa fa-map-marker w-[40px] !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
                   <span className="text-lg">{props.data.address}</span>
                 </div>
               </div>
@@ -85,13 +85,13 @@ export const Contact = (props) => {
                   Skontaktuj się bezpośrednio:
                 </h4>
                 <div className="flex items-center mb-2">
-                  <i className="fa fa-phone !text-2xl pr-3 bg-clip-text text-[#f4722b] "></i>
+                  <i className="fa fa-phone w-[40px] !text-2xl pr-3 bg-clip-text text-[#f4722b] "></i>
                   <a href="tel:123456789">
                     <span className="text-lg">{props.data.phone}</span>
                   </a>
                 </div>
                 <div className="flex items-center mb-2">
-                  <i className="fa fa-envelope !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
+                  <i className="fa fa-envelope w-[40px] !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
                   <a href="mailto:lorem@gmail.com">
                     <span className="text-lg">{props.data.email}</span>
                   </a>
@@ -103,12 +103,12 @@ export const Contact = (props) => {
                 </h4>
                 <span className="text-lg">
                   <a href="https://www.facebook.com/">
-                    <i className="fa fa-facebook-f !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
+                    <i className="fa fa-facebook-f !text-4xl pr-4 bg-clip-text text-[#f4722b]"></i>
                   </a>
                 </span>
                 <span className="text-lg">
                   <a href="https://www.instagram.com/">
-                    <i className="fa fa-instagram !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
+                    <i className="fa fa-instagram !text-4xl pr-3 bg-clip-text text-[#f4722b]"></i>
                   </a>
                 </span>
               </div>

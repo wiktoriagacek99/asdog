@@ -13,7 +13,7 @@ module.exports = {
       animation: {
         moveInLeft: "moveInLeft 0.5s ease-in",
         moveInRight: "moveInRight 0.5s ease-in",
-        wiggle: "wiggle 2s infinite",
+        wiggle: "wiggle 2.75s infinite",
       },
       keyframes: {
         moveInLeft: {

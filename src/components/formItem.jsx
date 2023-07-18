@@ -11,7 +11,7 @@ export const FormItem = (props) => {
         {props.text}
       </span>
       <input
-        className="form-item w-full bg-[#b3a78c] text-[#3e3e3e] mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+        className="form-item w-full bg-[#c2b599] text-white font-bold text-lg mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
         placeholder=""
         type={props.type}
         name={props.name}

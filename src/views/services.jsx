@@ -4,21 +4,21 @@ import { Paragraph } from "../components/paragraph";
 
 export const Services = (props) => {
   return (
-    <div id="services" className=" bg-[#f6e7c1] relative">
+    <div className=" bg-[#f6e7c1] relative">
       <img
         className="absolute top-0 h-24 w-full object-cover bg-white"
         src={props.data.waveImageTop}
         alt=""
       />{" "}
-      <div className="container px-10 mx-auto flex justify-center items-top h-full py-24 flex-col md:flex-row">
-        <div className="text-center">
+      <div className="container px-10 mx-auto flex justify-center items-top h-full py-12">
+        <div id="services" className="py-24 text-center">
           <Heading text={props.data.title} />{" "}
-          <Paragraph text={props.data.paragraph} />
+          <Paragraph text={props.data.paragraph} className="w-4/5 mx-auto" />
           <div className="flex items-stretch justify-center flex-wrap mx-auto">
             {props.data.services.map((d, i) => (
               <div
                 key={i}
-                className="w-full md:w-1/3 flex justify-start flex-col h-auto mb-10 md:first:mb-10"
+                className="w-full md:w-1/3 flex justify-start flex-col h-auto mb-10 md:first:mb-20"
               >
                 {""}
                 <i

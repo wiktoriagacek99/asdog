@@ -27,9 +27,14 @@ export const About = (props) => {
             })}
           </div>
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="relative w-full md:w-1/2">
           {" "}
-          <img src={props.data.image} alt="About us" />{" "}
+          <img
+            className="relative z-10 rounded-lg"
+            src={props.data.image}
+            alt="About us"
+          />{" "}
+          <div className="absolute rounded-lg -right-5 -top-5 bg-gradient-to-r from-yellow-600 to-orange-500 w-14 h-14 animate-wiggle"></div>
         </div>
       </div>
     </div>

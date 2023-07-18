@@ -8,7 +8,7 @@ export const Offer = (props) => {
       <div className="container px-10 mx-auto flex h-full py-24">
         <div className="text-center">
           <Heading text={props.data.title} />{" "}
-          <Paragraph text={props.data.paragraph} />
+          <Paragraph text={props.data.paragraph} className="w-4/5 mx-auto" />
           <div className="flex flex-wrap -mx-10">
             {props.data.offer.map((d, i) => (
               <div

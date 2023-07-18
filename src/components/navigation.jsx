@@ -8,7 +8,7 @@ export const Navigation = (props) => {
   };
 
   return (
-    <nav className="navigation lg:px-16 bg-white  items-center py-2 shadow-md fixed w-full z-20">
+    <nav className="navigation lg:px-16 bg-white items-center py-2 shadow-sm fixed w-full z-20">
       <div className="container flex flex-wrap items-center px-10">
         <div className="flex-1 flex justify-between items-center">
           <a href="#page-top" className="text-xl">
@@ -41,12 +41,12 @@ export const Navigation = (props) => {
           id="menu"
         >
           <div>
-            <ul className="md:flex  md:-m-4 items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+            <ul className="md:flex md:-m-4 items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
               {props.data.elements.map((d, i) => (
                 <li key={`${d}-${i}`}>
                   <a
                     className="relative link md:px-4 py-3 px-0 block text-xl capitalize 
-                      after:block after:absolute after:left-0 after:-bottom-1 after:w-0 after:bg-gradient-to-r after:from-yellow-600 after:to-orange-500 after:h-[2px] after:content[''] after:transition-width after:duration-200
+                      after:block after:absolute after:left-0 after:-bottom-1 after:w-0 after:bg-gradient-to-r after:from-yellow-600 after:to-orange-500 after:h-1 after:content[''] after:transition-width after:duration-200
                       hover:after:w-full"
                     href={`#${d.href}`}
                     onClick={handleClick}
