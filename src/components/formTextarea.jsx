@@ -11,7 +11,7 @@ export const Textarea = (props) => {
         {props.text}
       </span>
       <textarea
-        className="w-full h-32 bg-[#b3a78c] text-[#3e3e3e] mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+        className="form-item w-full h-32 bg-[#b3a78c] text-[#3e3e3e] mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
         type={props.type}
         name={props.name}
         required="required"

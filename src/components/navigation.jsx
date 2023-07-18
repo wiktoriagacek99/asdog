@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const Navigation = (props) => {
+  const [isNavOpen, setNavOpen] = useState(false);
+
+  const handleClick = () => {
+    setNavOpen(!isNavOpen);
+  };
+
   return (
     <nav className="navigation lg:px-16 bg-white  items-center py-2 shadow-md fixed w-full z-20">
       <div className="container flex flex-wrap items-center px-10">
@@ -14,48 +20,41 @@ export const Navigation = (props) => {
           htmlFor="menu-toggle"
           className="pointer-cursor md:hidden block pointer-cursor"
         >
-          <i className="fa fa-navicon fa-md bg-clip-text text-[#f4722b]"></i>
+          {isNavOpen ? (
+            <i className="fa fa-close !text-5xl bg-clip-text text-[#f4722b]"></i>
+          ) : (
+            <i className="fa fa-navicon !text-5xl bg-clip-text text-[#f4722b]"></i>
+          )}
         </label>
-        <input className="hidden checkbox" type="checkbox" id="menu-toggle" />
+        <input
+          className="hidden checkbox"
+          type="checkbox"
+          id="menu-toggle"
+          checked={isNavOpen}
+          onChange={() => setNavOpen(!isNavOpen)}
+        />
 
         <div
-          className="hidden md:flex md:items-center md:w-auto w-full"
+          className={` md:flex md:items-center md:w-auto w-full ${
+            isNavOpen ? "block" : "hidden"
+          }`}
           id="menu"
         >
           <div>
-            <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-              <li>
-                <a
-                  className="link md:pl-8 py-3 px-0 block text-xl"
-                  href="#about"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  className="link md:pl-8 py-3 px-0 block text-xl"
-                  href="#services"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  className="link md:pl-8 py-3 px-0 block text-xl"
-                  href="#offer"
-                >
-                  Offer
-                </a>
-              </li>
-              <li>
-                <a
-                  className="link md:pl-8 py-3 px-0 block md:mb-0 mb-2 text-xl"
-                  href="#contact"
-                >
-                  Contact
-                </a>
-              </li>
+            <ul className="md:flex  md:-m-4 items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+              {props.data.elements.map((d, i) => (
+                <li key={`${d}-${i}`}>
+                  <a
+                    className="relative link md:px-4 py-3 px-0 block text-xl capitalize 
+                      after:block after:absolute after:left-0 after:-bottom-1 after:w-0 after:bg-gradient-to-r after:from-yellow-600 after:to-orange-500 after:h-[2px] after:content[''] after:transition-width after:duration-200
+                      hover:after:w-full"
+                    href={`#${d.href}`}
+                    onClick={handleClick}
+                  >
+                    {d.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -63,12 +62,3 @@ export const Navigation = (props) => {
     </nav>
   );
 };
-
-const links = document.querySelectorAll(".link");
-const checkboxNav = document.querySelector(".checkbox");
-
-for (let link of links) {
-  link.addEventListener("click", function () {
-    checkboxNav.checked = false;
-  });
-}

@@ -21,10 +21,19 @@ export const Offer = (props) => {
                   <h3 className="text-2xl mt-5 mb-2 font-bold b-5">
                     {d.title}
                   </h3>
-                  <p className="mb-5 md:mb-24"> {d.text}</p>
+                  <p className="mb-10 md:mb-24"> {d.text}</p>
                 </div>
-                <div className="w-full md:w-1/2 rounded-xl md:mx-10 h-[400px] ">
-                  <img src={d.image} alt=""></img>{" "}
+                <div className="relative w-full md:w-1/2  md:mx-10 md:h-[400px] ">
+                  <div
+                    className={`absolute rounded-lg ${
+                      i % 2 !== 0 ? "-right-5" : "-left-5"
+                    } -top-5 bg-gradient-to-r from-yellow-600 to-orange-500 w-14 h-14 animate-wiggle`}
+                  ></div>
+                  <img
+                    className="relative z-10 rounded-lg"
+                    src={d.image}
+                    alt=""
+                  ></img>{" "}
                 </div>
               </div>
             ))}

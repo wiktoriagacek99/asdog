@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   color: #241e20;
@@ -15,20 +19,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.fa {
-  &-small {
-    font-size: 1.5rem !important;
-  }
-  &-md {
-    font-size: 3rem !important;
-  }
-  &-big {
-    font-size: 5rem !important;
-  }
-}
-
-#menu-toggle:checked + #menu {
-  display: block;
 }

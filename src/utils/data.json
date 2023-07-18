@@ -18,27 +18,27 @@
     "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "offer": [
       {
-        "image": "images/about-us.jpg",
+        "image": "images/offer.jpg",
         "title": "Text 1",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
       },
       {
-        "image": "images/about-us.jpg",
+        "image": "images/offer.jpg",
         "title": "Text 2",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
       },
       {
-        "image": "images/about-us.jpg",
+        "image": "images/offer.jpg",
         "title": "Text 3",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
       },
       {
-        "image": "images/about-us.jpg",
+        "image": "images/offer.jpg",
         "title": "Text 4",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
       },
       {
-        "image": "images/about-us.jpg",
+        "image": "images/offer.jpg",
         "title": "Text 5",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
       }
@@ -69,7 +69,7 @@
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
       },
       {
-        "icon": "fa-unlock-alt",
+        "icon": "fa-magic",
         "title": "Text 5",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
       },
@@ -97,5 +97,25 @@
     "instagram": "test-ig.com",
     "waveImageTop": "images/wave-top.svg",
     "waveImageBottom": "images/wave-bottom.svg"
+  },
+  "Navigation": {
+    "elements": [
+      {
+        "href": "about",
+        "title": "About"
+      },
+      {
+        "href": "offer",
+        "title": "Offer"
+      },
+      {
+        "href": "services",
+        "title": "Services"
+      },
+      {
+        "href": "contact",
+        "title": "Contact"
+      }
+    ]
   }
 }

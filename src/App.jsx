@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { Navigation } from "./components/navigation";
 import { Footer } from "./components/footer";
 import { About } from "./views/about";
@@ -14,10 +15,9 @@ const App = () => {
   useEffect(() => {
     setPageData(JsonData);
   }, []);
-  console.log(pageData);
   return pageData ? (
     <div>
-      <Navigation />
+      <Navigation data={pageData.Navigation} />
       <Header data={pageData.Header} />
       <About data={pageData.About} />
       <Services data={pageData.Services} />

@@ -20,7 +20,7 @@ export const About = (props) => {
             {props.data.whyUsReasons.map((d) => {
               return (
                 <div key={d} className="mb-3">
-                  <i className="fa fa-paw fa-small pr-3 bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 to-orange-500"></i>
+                  <i className="fa fa-paw !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
                   <span className="text-xl">{d}</span>
                 </div>
               );

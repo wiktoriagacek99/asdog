@@ -6,11 +6,11 @@ export const Services = (props) => {
   return (
     <div id="services" className=" bg-[#f6e7c1] relative">
       <img
-        className="object-revert md:object-contain bg-white"
+        className="absolute top-0 h-24 w-full object-cover bg-white"
         src={props.data.waveImageTop}
         alt=""
       />{" "}
-      <div className="container px-10 mx-auto flex justify-center items-top h-full py-12 flex-col md:flex-row">
+      <div className="container px-10 mx-auto flex justify-center items-top h-full py-24 flex-col md:flex-row">
         <div className="text-center">
           <Heading text={props.data.title} />{" "}
           <Paragraph text={props.data.paragraph} />
@@ -22,7 +22,7 @@ export const Services = (props) => {
               >
                 {""}
                 <i
-                  className={`fa ${d.icon} fa-big bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 to-orange-500`}
+                  className={`fa ${d.icon} !text-7xl bg-clip-text text-[#f4722b]`}
                 ></i>
                 <h3 className="text-2xl mt-5 mb-2 font-bold b-5">{d.title}</h3>
                 <p className="w-3/4 mx-auto"> {d.text}</p>
@@ -32,7 +32,7 @@ export const Services = (props) => {
         </div>
       </div>
       <img
-        className="object-revert md:object-contain bg-white"
+        className="absolute bottom-0 h-24 w-full object-cover bg-white"
         src={props.data.waveImageBottom}
         alt=""
       />{" "}

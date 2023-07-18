@@ -9,7 +9,28 @@ module.exports = {
         lg: "1200px",
       },
     },
-    extend: {},
+    extend: {
+      animation: {
+        moveInLeft: "moveInLeft 0.5s ease-in",
+        moveInRight: "moveInRight 0.5s ease-in",
+        wiggle: "wiggle 2s infinite",
+      },
+      keyframes: {
+        moveInLeft: {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        moveInRight: {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        wiggle: {
+          "0%": { transform: "rotate(-5deg)" },
+          "50%": { transform: "rotate(5deg)" },
+          "100%": { transform: "rotate(-5deg)" },
+        },
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
