@@ -1,22 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import { Heading } from "../components/heading";
 import { Paragraph } from "../components/paragraph";
-import { FormItem } from "../components/formItem";
-import { Textarea } from "../components/formTextarea";
-
-const handleSubmit = async (event) => {
-  event.preventDefault();
-
-  const form = event.target;
-  const formData = new FormData(form);
-
-  fetch(".netlify/functions/mail", {
-    method: form.method,
-    body: JSON.stringify(Object.fromEntries(formData)),
-  });
-};
+import { Form } from "../components/form";
+import { FormMessages } from "../components/formMessages";
+import { Loader } from "../components//loader";
 
 export const Contact = (props) => {
+  const [formMode, setFormMode] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+  const errorsObj = {
+    owners_name: "",
+    pets_name: "",
+    email: "",
+    phone_number: "",
+    message: "",
+  };
+  const [errors, setErrors] = useState(errorsObj);
+
+  const handleValidation = (errors1) => {
+    const newErrors = { ...errorsObj };
+    Object.entries(errors1.errorBag).forEach(([field, rule]) => {
+      newErrors[field] = props.data[rule];
+    });
+    setErrors(newErrors);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    setIsLoading(true);
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const response = await fetch(".netlify/functions/mail", {
+      method: form.method,
+      body: JSON.stringify(Object.fromEntries(formData)),
+    });
+
+    setIsLoading(false);
+
+    switch (response.status) {
+      case 200:
+        setFormMode(1);
+        break;
+      case 422:
+        const errors1 = await response.json();
+        handleValidation(errors1);
+        break;
+      default:
+        setFormMode(2);
+        break;
+    }
+  };
+
+  let formComponent = null;
+  switch (formMode) {
+    case 0:
+      formComponent = <Form action={handleSubmit} errors={errors} />;
+      break;
+
+    case 1:
+      formComponent = <FormMessages message={props.data.successMessage} />;
+      break;
+
+    case 2:
+    default:
+      formComponent = <FormMessages message={props.data.errorMessage} />;
+      break;
+  }
+
   return (
     <div className=" bg-[#f6e7c1] relative object-none">
       <img
@@ -27,70 +80,46 @@ export const Contact = (props) => {
       <div className="container px-10 mx-auto flex justify-center items-top h-full py-12">
         <div id="contact" className="text-left py-24">
           <Heading text={props.data.title} />{" "}
-          <Paragraph text={props.data.paragraph} className="w-4/5 mx-auto" />
-          <div className="flex justify-center items-top -mx-10  flex-col md:flex-row">
-            <form
-              method="POST"
-              onSubmit={handleSubmit}
-              id="contact-form"
-              className=" mb-10 md:mb-0 md:w-1/2 px-10 w-full flex flex-col"
+          <Paragraph
+            text={props.data.paragraph}
+            className="w-full md:w-4/5 mx-auto"
+          />
+          <div className="relative flex justify-center items-top -mx-10  flex-col md:flex-row">
+            <div
+              className={` w-full md:w-1/2 absolute left-0 h-full z-10 ${
+                isLoading ? "" : "hidden"
+              }`}
             >
-              <FormItem
-                text={"Owner's name"}
-                type="text"
-                name="owners_name"
-                htmlFor="owners_name"
-              />
-              <FormItem
-                text={"Pet's name"}
-                type="text"
-                name="pets_name"
-                htmlFor="pets_name"
-              />
-              <FormItem
-                text={"Phone number"}
-                type="tel"
-                name="tel"
-                htmlFor="tel"
-              />
-              <Textarea text={"Message"} name="textarea" htmlFor="textarea" />
-
-              <div className="mt-4">
-                {" "}
-                <input
-                  className="w-full text-xl text-center px-20 py-3 bg-[#3e3e3e] text-white block rounded-lg cursor-pointer 
-                  hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-500/40 transition-all duration-300"
-                  type="submit"
-                  value="Send"
-                />
-              </div>
-            </form>
-
-            <div className="md:w-1/2 px-10 w-full text-[#3e3e3e]">
-              <h3 className="text-3xl mb-10 font-bold text-left">
+              <Loader className="bg-[#f6e7c1] h-full" />
+            </div>
+            <div className={` md:w-1/2 ${isLoading ? "invisible" : ""}`}>
+              {formComponent}
+            </div>
+            <div className="md:w-1/2 px-10 w-full text-[#3e3e3e]  text-center md:text-left">
+              <h3 className="text-3xl mb-10 font-bold text-center md:text-left">
                 Lorem ipsum
               </h3>
               <div className="mb-8">
-                <h4 className="text-lg mb-2 font-bold text-left">
-                  Znajdziesz nas tutaj:
+                <h4 className="text-lg mb-2 font-bold text-center md:text-left">
+                  Lorem ipsum:
                 </h4>
-                <div className="flex items-center mb-2">
+                <div className="flex items-center justify-center md:justify-start mb-2">
                   {" "}
                   <i className="fa fa-map-marker w-[40px] !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
                   <span className="text-lg">{props.data.address}</span>
                 </div>
               </div>
               <div className="mb-8">
-                <h4 className="text-lg mb-2 font-bold text-left">
-                  Skontaktuj się bezpośrednio:
+                <h4 className="text-lg mb-2 font-bold text-center md:text-left">
+                  Lorem ipsum:
                 </h4>
-                <div className="flex items-center mb-2">
+                <div className="flex items-center justify-center md:justify-start mb-2">
                   <i className="fa fa-phone w-[40px] !text-2xl pr-3 bg-clip-text text-[#f4722b] "></i>
                   <a href="tel:123456789">
                     <span className="text-lg">{props.data.phone}</span>
                   </a>
                 </div>
-                <div className="flex items-center mb-2">
+                <div className="flex items-center justify-center md:justify-start mb-2">
                   <i className="fa fa-envelope w-[40px] !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
                   <a href="mailto:lorem@gmail.com">
                     <span className="text-lg">{props.data.email}</span>
@@ -98,8 +127,8 @@ export const Contact = (props) => {
                 </div>
               </div>
               <div className="mb-8">
-                <h4 className="text-lg mb-2 font-bold text-left">
-                  Nasze social media:
+                <h4 className="text-lg mb-2 font-bold text-center md:text-left">
+                  Lorem ipsum:
                 </h4>
                 <span className="text-lg">
                   <a href="https://www.facebook.com/">

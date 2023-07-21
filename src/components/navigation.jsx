@@ -12,7 +12,7 @@ export const Navigation = (props) => {
       <div className="container flex flex-wrap items-center px-10">
         <div className="flex-1 flex justify-between items-center">
           <a href="#page-top" className="text-xl">
-            <img src="images/logo.svg" alt="" className="w-24" />
+            <img src="images/logo-main.svg" alt="" className="w-24 h-16" />
           </a>
         </div>
 

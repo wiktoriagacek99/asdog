@@ -17,11 +17,11 @@ module.exports = {
       },
       keyframes: {
         moveInLeft: {
-          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "0%": { transform: "translateX(-30px)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
         moveInRight: {
-          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "0%": { transform: "translateX(30px)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
         wiggle: {

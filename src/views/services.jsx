@@ -13,7 +13,10 @@ export const Services = (props) => {
       <div className="container px-10 mx-auto flex justify-center items-top h-full py-12">
         <div id="services" className="py-24 text-center">
           <Heading text={props.data.title} />{" "}
-          <Paragraph text={props.data.paragraph} className="w-4/5 mx-auto" />
+          <Paragraph
+            text={props.data.paragraph}
+            className="w-full md:w-4/5 mx-auto"
+          />
           <div className="flex items-stretch justify-center flex-wrap mx-auto">
             {props.data.services.map((d, i) => (
               <div

@@ -7,7 +7,7 @@ import { Services } from "./views/services";
 import { Offer } from "./views/offer";
 import { Contact } from "./views/contact";
 import { Header } from "./views/header";
-import { Loader } from "./views/loader";
+import { Loader } from "./components/loader";
 import JsonData from "./utils/data.json";
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
       <Footer />
     </div>
   ) : (
-    <Loader />
+    <Loader className="bg-white h-screen" />
   );
 };
 

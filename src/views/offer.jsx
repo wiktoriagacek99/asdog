@@ -8,7 +8,10 @@ export const Offer = (props) => {
       <div className="container px-10 mx-auto flex h-full py-24">
         <div className="text-center">
           <Heading text={props.data.title} />{" "}
-          <Paragraph text={props.data.paragraph} className="w-4/5 mx-auto" />
+          <Paragraph
+            text={props.data.paragraph}
+            className="w-full md:w-4/5 mx-auto"
+          />
           <div className="flex flex-wrap -mx-10">
             {props.data.offer.map((d, i) => (
               <div
@@ -17,7 +20,7 @@ export const Offer = (props) => {
               >
                 {""}
 
-                <div className="w-full md:w-1/2 text-left md:px-10">
+                <div className="w-full md:w-1/2 text-center md:text-left md:px-10">
                   <h3 className="text-2xl mt-5 mb-2 font-bold b-5">
                     {d.title}
                   </h3>

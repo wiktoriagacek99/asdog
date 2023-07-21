@@ -96,7 +96,11 @@
     "facebook": "test-fb.com",
     "instagram": "test-ig.com",
     "waveImageTop": "images/wave-top.svg",
-    "waveImageBottom": "images/wave-bottom.svg"
+    "waveImageBottom": "images/wave-bottom.svg",
+    "errorMessage": "Wystąpił błąd!",
+    "successMessage": "Dziękujemy za zgłoszenie!",
+    "required": "Pole jest wymagane!",
+    "not valid": "Zły format pola!"
   },
   "Navigation": {
     "elements": [

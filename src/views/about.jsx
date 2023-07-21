@@ -13,10 +13,10 @@ export const About = (props) => {
             text={props.data.paragraph}
             className="text-center md:text-left"
           />
-          <h3 className="text-2xl mb-3 font-bold b-5">
+          <h3 className="text-2xl mb-3 font-bold b-5  text-center md:text-left">
             {props.data.whyUsText}
           </h3>
-          <div>
+          <div className="text-center md:text-left">
             {props.data.whyUsReasons.map((d) => {
               return (
                 <div key={d} className="mb-3">
