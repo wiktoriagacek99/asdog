@@ -17,9 +17,9 @@ export const Contact = (props) => {
   };
   const [errors, setErrors] = useState(errorsObj);
 
-  const handleValidation = (errors1) => {
+  const handleValidation = (errorsList) => {
     const newErrors = { ...errorsObj };
-    Object.entries(errors1.errorBag).forEach(([field, rule]) => {
+    Object.entries(errorsList.errorBag).forEach(([field, rule]) => {
       newErrors[field] = props.data[rule];
     });
     setErrors(newErrors);
@@ -45,8 +45,8 @@ export const Contact = (props) => {
         setFormMode(1);
         break;
       case 422:
-        const errors1 = await response.json();
-        handleValidation(errors1);
+        const errorsList = await response.json();
+        handleValidation(errorsList);
         break;
       default:
         setFormMode(2);
