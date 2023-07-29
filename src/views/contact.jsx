@@ -86,56 +86,56 @@ export const Contact = (props) => {
           />
           <div className="relative flex justify-center items-top -mx-10  flex-col md:flex-row">
             <div
-              className={` w-full md:w-1/2 absolute left-0 h-full z-10 ${
+              className={` w-full md:w-2/3 absolute left-0 h-full z-10 ${
                 isLoading ? "" : "hidden"
               }`}
             >
               <Loader className="bg-[#f6e7c1] h-full" />
             </div>
-            <div className={` md:w-1/2 ${isLoading ? "invisible" : ""}`}>
+            <div className={` md:w-2/3 ${isLoading ? "invisible" : ""}`}>
               {formComponent}
             </div>
-            <div className="md:w-1/2 px-10 w-full text-[#3e3e3e]  text-center md:text-left">
+            <div className="md:w-1/3 w-full text-[#3e3e3e]  text-center md:text-left">
               <h3 className="text-3xl mb-10 font-bold text-center md:text-left">
                 Lorem ipsum
               </h3>
               <div className="mb-8">
-                <h4 className="text-lg mb-2 font-bold text-center md:text-left">
+                <h4 className="text-lg mb-2  text-center md:text-left">
                   Lorem ipsum:
                 </h4>
                 <div className="flex items-center justify-center md:justify-start mb-2">
                   {" "}
                   <i className="fa fa-map-marker w-[40px] !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
-                  <span className="text-lg">{props.data.address}</span>
+                  <span className="text-xl font-bold">{props.data.address}</span>
                 </div>
               </div>
               <div className="mb-8">
-                <h4 className="text-lg mb-2 font-bold text-center md:text-left">
+                <h4 className="text-lg mb-2 text-center md:text-left">
                   Lorem ipsum:
                 </h4>
                 <div className="flex items-center justify-center md:justify-start mb-2">
                   <i className="fa fa-phone w-[40px] !text-2xl pr-3 bg-clip-text text-[#f4722b] "></i>
                   <a href="tel:123456789">
-                    <span className="text-lg">{props.data.phone}</span>
+                    <span className="text-xl font-bold">{props.data.phone}</span>
                   </a>
                 </div>
                 <div className="flex items-center justify-center md:justify-start mb-2">
                   <i className="fa fa-envelope w-[40px] !text-2xl pr-3 bg-clip-text text-[#f4722b]"></i>
                   <a href="mailto:lorem@gmail.com">
-                    <span className="text-lg">{props.data.email}</span>
+                    <span className="text-xl font-bold">{props.data.email}</span>
                   </a>
                 </div>
               </div>
               <div className="mb-8">
-                <h4 className="text-lg mb-2 font-bold text-center md:text-left">
+                <h4 className="text-lg mb-2 text-center md:text-left">
                   Lorem ipsum:
                 </h4>
-                <span className="text-lg">
+                <span className="text-xl">
                   <a href="https://www.facebook.com/">
                     <i className="fa fa-facebook-f !text-4xl pr-4 bg-clip-text text-[#f4722b]"></i>
                   </a>
                 </span>
-                <span className="text-lg">
+                <span className="text-xl">
                   <a href="https://www.instagram.com/">
                     <i className="fa fa-instagram !text-4xl pr-3 bg-clip-text text-[#f4722b]"></i>
                   </a>

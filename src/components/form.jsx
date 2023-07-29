@@ -5,7 +5,7 @@ import { Textarea } from "../components/formTextarea";
 export const Form = (props) => {
   return (
     <div className="mb-10 md:mb-0 px-10 w-full flex flex-col ">
-      <form noValidate method="POST" onSubmit={props.action} id="contact-form">
+      <form noValidate method="POST" onSubmit={props.action} id="contact-form" className="flex flex-wrap -mx-4">
         <FormItem
           text={"Owner's name"}
           type="text"
@@ -41,7 +41,7 @@ export const Form = (props) => {
           error={props.errors.message}
         />
 
-        <div className="mt-4">
+        <div className="mt-4 mx-auto w-full md:w-max">
           {" "}
           <input
             formNoValidate

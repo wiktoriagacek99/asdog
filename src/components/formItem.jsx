@@ -2,7 +2,7 @@ import React from "react";
 
 export const FormItem = (props) => {
   return (
-    <div className="mb-4">
+    <div className="mb-4 w-full md:w-1/2 md:px-4">
       <label
         className="text-lg text-[#3e3e3e] font-semibold flex justify-between items-center"
         htmlFor={props.name}

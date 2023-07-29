@@ -2,7 +2,7 @@ import React from "react";
 
 export const Textarea = (props) => {
   return (
-    <div className="mb-4">
+    <div className="mb-4 w-full md:px-4">
       <label
         className="text-lg text-[#3e3e3e] font-semibold flex justify-between items-center"
         htmlFor={props.name}
